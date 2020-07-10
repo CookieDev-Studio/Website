@@ -25,19 +25,19 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      :clipped-left="clipped"
       fixed
       app
       color="nav"
       dark
+      class="app-bar"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-app-bar>
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
     <v-footer
       :absolute="!fixed"
       app
@@ -58,6 +58,11 @@ export default {
           icon: 'mdi-apps',
           title: 'Home',
           to: '/'
+        },
+        {
+          icon: 'mdi-person',
+          title: 'About',
+          to: '/About'
         }
       ],
       title: 'Cookie Dev Studio'
@@ -65,3 +70,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.app-bar {
+  z-index: 10;
+}
+</style>

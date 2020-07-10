@@ -8,15 +8,18 @@
     <div class="cookie-icon-wrapper">
       <div class="cookie-icon"></div>
     </div>
+    <h1>Projects</h1>
+    <hr />
     <div class="projects-container">
       <ProjectCard v-for="project in projects" 
         :key="project.id"
         :id="project.id"
         :name="project.name"
         :description="project.description"
-        :leftAligned="leftAligned"
-        :url="projectPageUrl"
-        :image="imageUrl"
+        :leftAligned="project.leftAligned"
+        :url="project.projectPageUrl"
+        :image="project.imageUrl"
+        class="project-wrapper"
       />
     </div>
   </div>
@@ -38,7 +41,7 @@ export default {
           description: 'Sharp is a Discord moderation bot built on C# and .NET Core 3.1.',
           leftAligned: false,
           projectPageUrl: '/Sharp',
-          imageUrl: '../static/cookiedev.png'
+          imageUrl: 'forest.jpg'
         },
         {
           id: 2,
@@ -46,7 +49,7 @@ export default {
           description: 'The Cookie Dev Studio site is a web app built on Nuxt.js.',
           leftAligned: true,
           projectPageUrl: '/',
-          imageUrl: '../static/cookiedev.png'
+          imageUrl: 'mountains.jpg'
         }
       ]
     }
@@ -59,6 +62,19 @@ export default {
   width: 100vw;
   display: flex;
   flex-direction: column;
+}
+
+.home-container > h1 {
+  color: #333;
+  font-size: 34px;
+  text-align: center;
+  margin: 30px 0 10px 0;
+  padding-bottom: 5px;
+}
+
+.home-container > hr {
+  width: 30vw;
+  align-self: center;
 }
 
 .cookie-header-wrapper {
@@ -87,7 +103,7 @@ export default {
 
 .cookie-header p {
   color: #fff;
-  font-size: 22px;
+  font-size: 26px;
   text-align: center;
 }
 
@@ -114,4 +130,15 @@ export default {
   background-position: center;
   z-index: 6;
 }
+
+.projects-container {
+  width: 100vw;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self:center;
+}
+
 </style>
