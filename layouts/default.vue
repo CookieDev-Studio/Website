@@ -6,6 +6,7 @@
       app
       dark
       color="drawer"
+      class="drawer"
     >
       <v-list>
         <v-list-item
@@ -42,7 +43,14 @@
       :absolute="!fixed"
       app
     >
-      <div style="width: 100%; text-align: center;">&copy; {{ new Date().getFullYear() }}</div>
+      <div style="width: 100%; text-align: center;">
+        <a href="https://github.com/CookieDev-Studio" target="_blank">
+          <div class="footer-img" id="github" />
+        </a> | 
+        <a href="https://patreon.com/cookiedevstudio" target="_blank">
+          <div class="footer-img" id="patreon" />
+        </a>        
+      </div>
     </v-footer>
   </v-app>
 </template>
@@ -60,9 +68,14 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-person',
+          icon: 'mdi-account-supervisor',
           title: 'About',
           to: '/About'
+        },
+        {
+          icon: 'mdi-email',
+          title: 'Contact',
+          to: '/Contact'
         }
       ],
       title: 'Cookie Dev Studio'
@@ -72,7 +85,31 @@ export default {
 </script>
 
 <style scoped>
+.drawer {
+  z-index: 20;
+  max-height: none !important;
+}
+
 .app-bar {
   z-index: 10;
+}
+
+.footer-img {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin: auto;
+}
+
+#github {
+  background-image: url('../static/octocat.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#patreon {
+  background-image: url('../static/Patreon_Mark_Coral.jpg');
+  background-size: cover;
+  background-position: center;
 }
 </style>

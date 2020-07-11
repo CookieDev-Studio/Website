@@ -1,23 +1,25 @@
 <template>
     <div>
-        <div class="project-card-outer">
-            <div class="project" v-if="leftAligned">
-                <img :src="image" />
-                <div class="project-description">
-                    <h2>{{id}}: {{name}}</h2>
-                    <p>{{description}}</p>
-                    <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
+        <a class="card-href" :href="url" target="_blank">
+            <div class="project-card-outer">
+                <div class="project" v-if="leftAligned">
+                    <img :src="image" />
+                    <div class="project-description">
+                        <h2>{{id}}: {{name}}</h2>
+                        <p>{{description}}</p>
+                        <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
+                    </div>
                 </div>
+                <div class="project" v-else>
+                    <div class="project-description">
+                        <h2>{{id}}: {{name}}</h2>
+                        <p>{{description}}</p>
+                        <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
+                    </div>
+                    <img :src="image" />
+                </div>             
             </div>
-            <div class="project" v-else>
-                <div class="project-description">
-                    <h2>{{id}}: {{name}}</h2>
-                    <p>{{description}}</p>
-                    <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
-                </div>
-                <img :src="image" />
-            </div>             
-        </div>
+        </a>
     </div>
 </template>
 
@@ -36,6 +38,11 @@ export default {
 </script>
 
 <style scoped>
+.card-href {
+    text-decoration: none;
+    color: none;
+}
+
 .project-card-outer {
     width: 70vw;
     height: 300px;
@@ -43,6 +50,7 @@ export default {
     background: #333;
     margin: 40px;
     display: flex;
+    cursor: pointer;
 }
 
 .project {
@@ -53,6 +61,7 @@ export default {
 
 .project img {
     width: 65%;
+    object-fit: cover;
 }
 
 .project-description {

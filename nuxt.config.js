@@ -66,7 +66,7 @@ export default {
         light: {
           nav: '#222222',
           drawer: '#353535',
-          primary: colors.blue.lighten4,
+          primary: colors.amber.accent4,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
