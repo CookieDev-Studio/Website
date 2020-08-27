@@ -1,20 +1,30 @@
 # CookieDev
 
-## Build Setup
+## Table of contents
+* [Introduction](#introduction)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Notes](#some-notes)
+* [Upcoming](#upcoming)
 
-```bash
-# install dependencies
-$ npm install
+## Introduction
+This is the website for the Cookie Dev Studio team.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Technologies
+You will need the following tech installed on your machine to run this program locally.
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+* VueJS
+* VSCode
 
-# generate static project
-$ npm run generate
-```
+## Setup
+1. Clone the repository.
+2. `cd` into the Website directory.
+3. Run `npm run dev` in the terminal.
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Some Notes
+
+We deploy this application via the `npm run build` and `npm run export` commands.
+
+## Upcoming
+
+Some design overhauls will be introduced to the About and Contact pages. This will include UI shuffling, some new imagery and iconography, and a contact form.
