@@ -5,8 +5,8 @@
         <h1>Devs with a sweet tooth</h1>
         <hr />
         <div class="about-text-wrapper">
-            <p>Cookie Dev Studio is a group of software devs who've come together to make some open source software. Committed to writing efficient, scaleable and maintainable code, Cookie Dev is excited to build tools and products people find pleasant and efficient to use.</p>
-            <p>We write our software with tried-and-true technologies. Our skillset includes:</p>
+            <p>Cookie Dev Studio is a pair of devs who've come together to make some open source software. Committed to writing efficient, scaleable and maintainable code, Cookie Dev is excited to build tools and products people find pleasant and efficient to use.</p>
+            <p>Our skillset includes:</p>
             <ul>
                 <li>C#</li>
                 <li>.NET Core 3.1</li>
@@ -15,7 +15,7 @@
                 <li>Postgresql</li>
             </ul>
             <br />
-            <p>We iterate quickly over web sites and web applications off all kinds as well as various other projects (ex. Discord bots!). If you have an app idea, we'd love to hear it! Feel free to visit our <a href="/Contact">contact page</a>.</p>
+            <p>We rapidly iterate over a wide variety of projects targetting the web, consoles, and other neat stuff (ex. Discord bots!). If you have an app idea, we'd love to hear it! Feel free to visit our <a href="/Contact">contact page</a>.</p>
             <div class="button-group">
                 <p>If you would like to get to know us better, visit our GitHub <v-btn text class="btn" color="primary" href="https://github.com/CookieDev-Studio" target="_blank">here!</v-btn></p>
                 <p>If you would like to see our projects, click <v-btn text class="btn" color="primary" href="/">here!</v-btn></p>
@@ -137,14 +137,15 @@ export default {
 }
 
 .team-description {
-    background: rgba(20, 20, 20, 0.75);
+    background: rgba(20, 20, 20, 0.85);
     width: 70%;
     display: flex;
     flex-direction: column;
     margin: auto;
     border-radius: 5px;
     margin-bottom: 20px;
-    padding: 20px;    
+    padding: 20px;
+    box-shadow: 1px 1px 10px #000;
 }
 
 .team-description h2 {
@@ -160,5 +161,28 @@ export default {
 .team-description p {
     color: #eaba8e;
     font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    .images-wrapper {
+        flex-direction: column;
+    }
+
+    .team-img {
+        width: 200px;
+        max-width: 200px;
+        height: 200px;
+    }
+
+    .team-description {
+        margin-bottom: 40px;
+        width: 60%;
+        padding: 10px;
+    }
+
+    .team-description h2 {
+        font-size: 20px;
+    }
+
 }
 </style>

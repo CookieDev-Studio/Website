@@ -81,5 +81,4 @@ export default {
   justify-content: center;
   align-self:center;
 }
-
 </style>
