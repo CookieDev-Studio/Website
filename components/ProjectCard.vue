@@ -6,24 +6,24 @@
                     <img :src="image" />
                     <div class="image-mobile-overlay">
                         <h2>{{id}}: {{name}}</h2>
-                        <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
+                        <v-btn :href="url" target="_blank" rounded class="btn project-btn">See project</v-btn>
                     </div>
                     <div class="project-description">
                         <h2>{{id}}: {{name}}</h2>
                         <p>{{description}}</p>
-                        <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
+                        <v-btn :href="url" target="_blank" rounded class="btn project-btn">See project</v-btn>
                     </div>
                 </div>
                 <div class="project" v-else>
                     <div class="project-description">
                         <h2>{{id}}: {{name}}</h2>
                         <p>{{description}}</p>
-                        <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
+                        <v-btn :href="url" target="_blank" rounded class="btn project-btn">See project</v-btn>
                     </div>
                     <img :src="image" />
                     <div class="image-mobile-overlay">
                         <h2>{{id}}: {{name}}</h2>
-                        <v-btn :href="url" rounded class="btn project-btn">See project</v-btn>
+                        <v-btn :href="url" target="_blank" rounded class="btn project-btn">See project</v-btn>
                     </div>
                 </div>             
             </div>

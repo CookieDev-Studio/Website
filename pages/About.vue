@@ -36,14 +36,15 @@
                     </div>
                 </li>
             </ul>
+            <hr />
             <br />
             <p>We rapidly iterate over a wide variety of projects targetting the web, consoles, and other neat stuff (ex. Discord bots!). If you have an app idea, we'd love to hear it! Feel free to visit our <a href="/Contact">contact page</a>.</p>
-            <p>You can learn more about our projects here:</p>
+            <p id="button-group-precursor">You can learn more about our projects here:</p>
             <div class="button-group">
                 <v-btn class="btn" to="/">Projects</v-btn>
                 <v-btn class="btn" href="https://github.com/CookieDev-Studio" target="_blank">Github</v-btn>                
             </div>
-            <p style="margin-top: 40px;">If you like our work and want to support us:</p>
+            <p>If you like our work and want to support us:</p>
             <a href="https://patreon.com/cookiedevstudio" target="_blank" class="patreon-cta">
                 <img src="../static/Digital-Patreon-Logo_White.png" alt="Patreon logo" /> Become a Patron
             </a>            
@@ -172,6 +173,14 @@ export default {
     z-index: 5;
 }
 
+.about-text-wrapper > hr {
+    width: 90%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 30px auto;
+}
+
 .show-info {
     display: inline-block !important;
     position: absolute;
@@ -237,6 +246,7 @@ export default {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .button-group .btn {
@@ -334,14 +344,15 @@ export default {
 
 @media (max-width: 670px) {
     .about-text-wrapper ul {
-        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0 !important;
     }
 
     .about-text-wrapper ul li {
         margin-top: 10px;
         margin-bottom: 10px;
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
     }
 
     .show-info {
@@ -351,8 +362,21 @@ export default {
 
 @media (max-width: 500px) {
     .about-text-wrapper ul li {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
+    }
+
+    #button-group-precursor {
+        margin-top: 30px;
+        display: inline-block;
+    }
+
+    .button-group {
+        margin-bottom: 60px;
+    }
+
+    .patreon-cta {
+        width: 80vw;
     }
 
     .images-wrapper {
