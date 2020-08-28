@@ -91,7 +91,7 @@ export default {
 }
 
 .app-bar {
-  z-index: 100;
+  z-index: 100 !important;
 }
 
 .footer-img {
