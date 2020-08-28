@@ -6,21 +6,47 @@
         <hr />
         <div class="about-text-wrapper">
             <p>Cookie Dev Studio is a pair of devs who've come together to make some open source software. Committed to writing efficient, scaleable and maintainable code, Cookie Dev is excited to build tools and products people find pleasant and efficient to use.</p>
-            <p>Our skillset includes:</p>
+            <div class="skillset-title">
+                <hr />
+                <p>Our skillset includes</p>
+                <hr />
+            </div>
             <ul>
-                <li>C#</li>
-                <li>.NET Core 3.1</li>
-                <li>JavaScript (ES7)</li>
-                <li>Vue.js and Nuxt.js</li>
-                <li>Postgresql</li>
+                <li id="csharp" @click="toggleSkillInfo">
+                    <div class="skill-info">C# programming language for the back-end.</div>
+                </li>
+                <li id="dotnet" @click="toggleSkillInfo">
+                    <div class="skill-info">
+                        .NET Core framework for our back-end.
+                    </div>
+                </li>
+                <li id="javascript" @click="toggleSkillInfo">
+                    <div class="skill-info">
+                        JavaScript (ES7)  for the front-end.
+                    </div>
+                </li>
+                <li id="vue" @click="toggleSkillInfo">
+                    <div class="skill-info">
+                        Vue.js framework for the front-end.
+                    </div>
+                </li>
+                <li id="postgres" @click="toggleSkillInfo">
+                    <div class="skill-info">
+                        Postgresql for our data.
+                    </div>
+                </li>
             </ul>
             <br />
             <p>We rapidly iterate over a wide variety of projects targetting the web, consoles, and other neat stuff (ex. Discord bots!). If you have an app idea, we'd love to hear it! Feel free to visit our <a href="/Contact">contact page</a>.</p>
+            <p>You can learn more about our projects here:</p>
             <div class="button-group">
-                <p>If you would like to get to know us better, visit our GitHub <v-btn text class="btn" color="primary" href="https://github.com/CookieDev-Studio" target="_blank">here!</v-btn></p>
-                <p>If you would like to see our projects, click <v-btn text class="btn" color="primary" href="/">here!</v-btn></p>
-                <p>If you'd like to consider supporting us on Patreon, click <v-btn text class="btn" color="primary" href="https://patreon.com/cookiedevstudio" target="_blank">here!</v-btn></p>
+                <v-btn class="btn" to="/">Projects</v-btn>
+                <v-btn class="btn" href="https://github.com/CookieDev-Studio" target="_blank">Github</v-btn>                
             </div>
+            <p style="margin-top: 40px;">If you like our work and want to support us:</p>
+            <a href="https://patreon.com/cookiedevstudio" target="_blank" class="patreon-cta">
+                <img src="../static/Digital-Patreon-Logo_White.png" alt="Patreon logo" /> Become a Patron
+            </a>            
         </div>
         <div class="team-header">
             <h1>The Team</h1>
@@ -52,6 +78,28 @@ import CookieHeader from '../components/CookieHeader';
 export default {
     components: {
         CookieHeader
+    },
+    methods: {
+        toggleSkillInfo: (e) => {
+            if (e.target.classList.contains('skill-info')) {
+                const info = e.target;
+                info.classList.remove('show-info');
+                return;
+            }
+
+            const info = e.target.children[0];
+
+            if (info.classList.contains('show-info')) {
+                info.classList.remove('show-info');
+            } else {
+                const siblings = Array.from(e.target.parentElement.children);
+
+                siblings.forEach(sibling => 
+                    sibling.children[0].classList.remove('show-info'));
+
+                info.classList.add('show-info');
+            }
+        }
     }
 }
 </script>
@@ -85,18 +133,139 @@ export default {
     align-self: center;
 }
 
+.about-text-wrapper p {
+    text-align: center;
+}
+
+.about-text-wrapper ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.about-text-wrapper li {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.about-text-wrapper li .skill-info {
+    display: none;
+    margin-top: 60px;
+    background:rgba(20, 20, 20, .95);
+    color: #fff;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 30vw;
+    height: auto;
+    z-index: 5;
+}
+
+.show-info {
+    display: inline-block !important;
+    position: absolute;
+}
+
+#csharp {
+    background-image: url('../static/csharp-logo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+#dotnet {
+    background-image: url('../static/dotnetcorelogo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+#javascript {
+    background-image: url('../static/js-logo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+#vue {
+    background-image: url('../static/vuelogo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+#postgres {
+    background-image: url('../static/postgres-logo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.skillset-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.skillset-title hr, .skillset-title p {
+    display: inline;
+}
+
+.skillset-title hr {
+    width: 20vw;
+    align-self: center;
+}
+
+.skillset-title p {
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 .button-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .button-group .btn {
-    padding: 0 !important;
-    margin-top: -2px;
     font-size: 18px;
+    margin: 0 20px;
+    padding: 25px;
+    font-weight: bold;
 } 
+
+.patreon-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF424D;
+    padding: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 22px;
+    color: #fff;
+    width: 50%;
+    margin: auto;
+}
+
+.patreon-cta > img {
+    width: 40px;
+    margin-right: 20px;
+}
+
+
 
 .team-header {
     width: 100%;
@@ -163,7 +332,29 @@ export default {
     font-size: 14px;
 }
 
+@media (max-width: 670px) {
+    .about-text-wrapper ul {
+        flex-direction: column;
+    }
+
+    .about-text-wrapper ul li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .show-info {
+        display: none !important;
+    }
+}
+
 @media (max-width: 500px) {
+    .about-text-wrapper ul li {
+        width: 150px;
+        height: 150px;
+    }
+
     .images-wrapper {
         flex-direction: column;
     }
